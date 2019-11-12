@@ -2,9 +2,9 @@
   <head>
     <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Hello Gridea | Gridea</title>
+<title>栈内存与堆内存 、浅拷贝与深拷贝 | Gridea</title>
 <meta name="description" content="学习" />
-<link rel="shortcut icon" href="https://g2Kennys.github.io/favicon.ico?v=1573523322074">
+<link rel="shortcut icon" href="https://g2Kennys.github.io/favicon.ico?v=1573526743615">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
 <link rel="stylesheet" href="https://g2Kennys.github.io/styles/main.css">
@@ -20,7 +20,7 @@
       <div class="main-content">
         <div class="site-header">
   <a href="https://g2Kennys.github.io">
-  <img class="avatar" src="https://g2Kennys.github.io/images/avatar.png?v=1573523322074" alt="">
+  <img class="avatar" src="https://g2Kennys.github.io/images/avatar.png?v=1573526743615" alt="">
   </a>
   <h1 class="site-title">
     Gridea
@@ -73,14 +73,14 @@
         <div class="post-detail">
           <article class="post">
             <h2 class="post-title">
-              Hello Gridea
+              栈内存与堆内存 、浅拷贝与深拷贝
             </h2>
             <div class="post-info">
               <span>
                 2018-12-12
               </span>
               <span>
-                2 min read
+                9 min read
               </span>
               
                 <a href="https://g2Kennys.github.io/tag/XAEA4HY-6" class="post-tag">
@@ -93,38 +93,227 @@
             
             <div class="post-content-wrapper">
               <div class="post-content">
-                <p>👏  欢迎使用 <strong>Gridea</strong> ！<br>
-✍️  <strong>Gridea</strong> 一个静态博客写作客户端。你可以用它来记录你的生活、心情、知识、笔记、创意... ...</p>
-<!-- more -->
-<p><a href="https://github.com/getgridea/gridea">Github</a><br>
-<a href="https://gridea.dev/">Gridea 主页</a><br>
-<a href="http://fehey.com/">示例网站</a></p>
-<h2 id="特性">特性👇</h2>
-<p>📝  你可以使用最酷的 <strong>Markdown</strong> 语法，进行快速创作</p>
-<p>🌉  你可以给文章配上精美的封面图和在文章任意位置插入图片</p>
-<p>🏷️  你可以对文章进行标签分组</p>
-<p>📋  你可以自定义菜单，甚至可以创建外部链接菜单</p>
-<p>💻  你可以在 <strong>Windows</strong>，<strong>MacOS</strong> 或 <strong>Linux</strong> 设备上使用此客户端</p>
-<p>🌎  你可以使用 <strong>𝖦𝗂𝗍𝗁𝗎𝖻 𝖯𝖺𝗀𝖾𝗌</strong> 或 <strong>Coding Pages</strong> 向世界展示，未来将支持更多平台</p>
-<p>💬  你可以进行简单的配置，接入 <a href="https://github.com/gitalk/gitalk">Gitalk</a> 或 <a href="https://github.com/SukkaW/DisqusJS">DisqusJS</a> 评论系统</p>
-<p>🇬🇧  你可以使用<strong>中文简体</strong>或<strong>英语</strong></p>
-<p>🌁  你可以任意使用应用内默认主题或任意第三方主题，强大的主题自定义能力</p>
-<p>🖥  你可以自定义源文件夹，利用 OneDrive、百度网盘、iCloud、Dropbox 等进行多设备同步</p>
-<p>🌱 当然 <strong>Gridea</strong> 还很年轻，有很多不足，但请相信，它会不停向前 🏃</p>
-<p>未来，它一定会成为你离不开的伙伴</p>
-<p>尽情发挥你的才华吧！</p>
-<p>😘 Enjoy~</p>
+                <p>欲练此功，必先**。<br>
+栈内存与堆内存、浅拷贝与深拷贝，前端必备。<br>
+栈<br>
+1.后进者先出，先进者后出。<br>
+2.新添加的或待删除的元素都保存在栈的末尾，称为栈顶，另一端叫栈底。<br>
+3.从栈的操作特性来看，是一种操作受限的线性表，之允许在一端插入和删除数据。<br>
+4.不包含任何元素的栈称为空栈。<br>
+栈爷用在编程语言的编译器和内存中保存变量、方法调用等，比如函数的调用栈。<br>
+堆<br>
+1.堆数据结构是一种树状结构。<br>
+2.堆无序、杂乱。(就像是JSON中的key-value，只要知道key，就能拿到对应的value)<br>
+比较<br>
+1.堆是动态分配内存，内存大小不一样，也不会自动释放<br>
+2.栈是自动分配相对固定大小的内存空间，并由系统自动释放。<br>
+3.栈是线性结构，后进先出，方便管理。<br>
+4.堆，混沌、杂乱无章，方便储存和开辟内存空间。<br>
+栈内存与堆内存<br>
+JavaScript中的变量分为基本类型和引用类型。<br>
+· 基本类型是保存在栈内存中的简单数据段，它们的值都有固定的大小，保存在栈空间，通过按值访问，并由系统自动分配和自动释放。<br>
+这样带来的好处就是，内存可以及时得到回收，相对于堆来说，更加容易管理内存空间。<br>
+JavaScript 中的 Boolean、Null、Undefined、Number、String、Symbol 都是基本类型。<br>
+· 引用类型（如对象、数组、函数等）是保存在堆内存中的对象，值大小不固定，栈内存中存放的该对象的访问地址指向堆内存中的对<br>
+象，JavaScript 不允许直接访问堆内存中的位置，因此操作对象时，实际操作对象的引用。<br>
+JavaScript 中的 Object、Array、Function、RegExp、Date 是引用类型。</p>
+<p>实例：<br>
+let a1 = 0; // 栈内存<br>
+let a2 = &quot;this is string&quot; // 栈内存<br>
+let a3 = null; // 栈内存<br>
+let b = { x: 10 }; // 变量 b 存在于栈中，{ x: 10 } 作为对象存在于堆中<br>
+let c = [1, 2, 3]; // 变量 c 存在于栈中，[1, 2, 3] 作为对象存在于堆中<br>
+<img src="https://g2Kennys.github.io/post-images/1573526589227.png" alt=""><br>
+当我们要访问堆内存中的引用数据类型时<br>
+从栈中获取该对象的地址引用<br>
+再从堆内存中取得我们需要的数据<br>
+基本类型发生复制<br>
+let a = 20;<br>
+let b = a;<br>
+b = 30;<br>
+coonsole.log(a);  // 20<br>
+<img src="https://g2Kennys.github.io/post-images/1573526616516.png" alt=""><br>
+在栈内存中的数据发生复制行为时，系统会自动为新的变量分配一个新值，最后这些变量都是 相互独立，互不影响的。<br>
+引用类型发生复制<br>
+let a = { x: 10, y: 20 }<br>
+let b = a;<br>
+b.x = 5;<br>
+console.log(a.x); // 5<br>
+· 引用类型的复制，同样为新的变量 b 分配一个新的值，保存在栈内存中，不同的是，这个值仅仅是引用类型的一个地址指针。<br>
+· 他们两个指向同一个值，也就是地址指针相同，在堆内存中访问到的具体对象实际上是同一个。<br>
+· 因此改变 b.x 时，a.x 也发生了变化，这就是引用类型的特性。<br>
+<img src="https://g2Kennys.github.io/post-images/1573526674368.png" alt=""><br>
+栈内存                             堆内存<br>
+储存基础数据类型                   储存引用数据类型<br>
+按值访问                          按引用访问<br>
+存储的值大小固定              存储的值大小不定，可动态调整<br>
+由系统自动分配内存空间            由代码进行指定分配<br>
+空间小，运行效率高              空间大，运行效率相对较低<br>
+先进后出，后进先出            无序存储，可根据引用直接获取</p>
+<p>浅拷贝与深拷贝<br>
+引用类型的复制就是浅拷贝，复制得到的访问地址都指向用一个内存空间。修改其中一个值，另外一个也跟着改变了。</p>
+<p>深拷贝：复制得到的访问地址指向不同的内存空间，互不相干。所以修改其中一个值，另外一个不会改变。</p>
+<p>平时使用数组复制时，我们大多数会使用 =，这只是浅拷贝，存在很多问题。比如：</p>
+<p>let arr = [1,2,3,4,5];<br>
+let arr2 = arr;<br>
+console.log(arr) //[1, 2, 3, 4, 5]<br>
+console.log(arr2) //[1, 2, 3, 4, 5]<br>
+arr[0] = 6;<br>
+console.log(arr) //[6, 2, 3, 4, 5]<br>
+console.log(arr2) //[6, 2, 3, 4, 5]<br>
+arr2[4] = 7;<br>
+console.log(arr) //[6, 2, 3, 4, 7]<br>
+console.log(arr2) //[6, 2, 3, 4, 7]</p>
+<p>很明显，浅拷贝下，拷贝和被拷贝的数组会相互受到影响。</p>
+<p>所以，必须要有一种不受影响的方法，那就是深拷贝。</p>
+<p>深拷贝的的复制过程</p>
+<p>let a = { x: 10, y: 20 }<br>
+let b = JSON.parse(JSON.stringify(a));<br>
+b.x = 5;<br>
+console.log(a.x); // 10<br>
+console.log(b.x); // 5</p>
+<p>数组<br>
+一、for 循环</p>
+<p>//for 循环 copy<br>
+function copy(arr) {<br>
+let cArr = []<br>
+for(let i = 0; i &lt; arr.length; i++){<br>
+cArr.push(arr[i])<br>
+}<br>
+return cArr;<br>
+}<br>
+let arr3 = [1,2,3,4];<br>
+let arr4 = copy(arr3) //[1,2,3,4]<br>
+console.log(arr4) //[1,2,3,4]<br>
+arr3[0] = 5;<br>
+console.log(arr3) //[5,2,3,4]<br>
+console.log(arr4) //[1,2,3,4]</p>
+<p>二、slice 方法</p>
+<p>//slice实现深拷贝<br>
+let arr5 = [1,2,3,4];<br>
+let arr6 = arr5.slice(0);<br>
+arr5[0] = 5;<br>
+console.log(arr5); //[5,2,3,4]<br>
+console.log(arr6); //[1,2,3,4]</p>
+<p>三、concat 方法</p>
+<p>//concat实现深拷贝<br>
+let arr7 = [1,2,3,4];<br>
+let arr8 = arr7.concat();<br>
+arr7[0] = 5;<br>
+console.log(arr7); //[5,2,3,4]<br>
+console.log(arr8); //[1,2,3,4]</p>
+<p>四、es6 扩展运算</p>
+<p>//es6 扩展运算实现深拷贝<br>
+let arr9 = [1,2,3,4];<br>
+let [...arr10] = arr9;<br>
+arr9[0] = 5;<br>
+console.log(arr9) //[5,2,3,4]<br>
+console.log(arr10) //[1,2,3,4]</p>
+<p>五、JSON.parse 与 JSON.stringify</p>
+<p>let arr9 = [1,2,3,4];<br>
+let arr10 = JSON.parse(JSON.stringify(arr9))<br>
+arr9[0] = 5;<br>
+console.log(arr9) //[5,2,3,4]<br>
+console.log(arr10) //[1,2,3,4]</p>
+<p>注意：该方法在数据量比较大时，会有性能问题。<br>
+对象</p>
+<p>一、对象的循环</p>
+<p>//  循环 copy 对象<br>
+let obj = {<br>
+id:'0',<br>
+name:'king',<br>
+sex:'man'<br>
+}<br>
+let obj2 = copy2(obj)<br>
+function copy2(obj) {<br>
+let cObj = {};<br>
+for(var key in obj){<br>
+cObj[key] = obj[key]<br>
+}<br>
+return cObj<br>
+}<br>
+obj2.name = &quot;king2&quot;<br>
+console.log(obj) // {id: &quot;0&quot;, name: &quot;king&quot;, sex: &quot;man&quot;}<br>
+console.log(obj2) // {id: &quot;0&quot;, name: &quot;king2&quot;, sex: &quot;man&quot;}</p>
+<p>二、JSON.parse 与 JSON.stringify</p>
+<p>var obj1 = {<br>
+x: 1,<br>
+y: {<br>
+m: 1<br>
+},<br>
+a:undefined,<br>
+b:function(a,b){<br>
+return a+b<br>
+},<br>
+c:Symbol(&quot;foo&quot;)<br>
+};<br>
+var obj2 = JSON.parse(JSON.stringify(obj1));<br>
+console.log(obj1) //{x: 1, y: {m: 1}, a: undefined, b: ƒ, c: Symbol(foo)}<br>
+console.log(obj2) //{x: 1, y: {m: 1}}<br>
+obj2.y.m = 2; //修改obj2.y.m<br>
+console.log(obj1) //{x: 1, y: {m: 1}, a: undefined, b: ƒ, c: Symbol(foo)}<br>
+console.log(obj2) //{x: 2, y: {m: 2}}</p>
+<p>可实现多维对象的深拷贝。</p>
+<p>注意：进行JSON.stringify() 序列化的过程中，undefined、任意的函数以及 symbol 值，在序列化过程中会被忽略（出现在非数组对象的属性值中时）或者被转换成 null（出现在数组中时）。</p>
+<p>三、es6 扩展运算</p>
+<p>let obj = {<br>
+id:'0',<br>
+name:'king',<br>
+sex:'man'<br>
+}<br>
+let {...obj4} = obj<br>
+obj4.name = &quot;king4&quot;<br>
+console.log(obj) //{id: &quot;0&quot;, name: &quot;king&quot;, sex: &quot;man&quot;}<br>
+console.log(obj4) //{id: &quot;0&quot;, name: &quot;king4&quot;, sex: &quot;man&quot;}</p>
+<p>四、Object.assign()</p>
+<p>Object.assign() 只能实现一维对象的深拷贝。</p>
+<p>var obj1 = {x: 1, y: 2}, obj2 = Object.assign({}, obj1);<br>
+console.log(obj1) // {x: 1, y: 2}<br>
+console.log(obj2) // {x: 1, y: 2}</p>
+<p>obj2.x = 2; // 修改 obj2.x<br>
+console.log(obj1) // {x: 1, y: 2}<br>
+console.log(obj2) // {x: 2, y: 2}</p>
+<p>var obj1 = {<br>
+x: 1,<br>
+y: {<br>
+m: 1<br>
+}<br>
+};<br>
+var obj2 = Object.assign({}, obj1);<br>
+console.log(obj1) // {x: 1, y: {m: 1}}<br>
+console.log(obj2) // {x: 1, y: {m: 1}}</p>
+<p>obj2.y.m = 2; // 修改 obj2.y.m<br>
+console.log(obj1) // {x: 1, y: {m: 2}}<br>
+console.log(obj2) // {x: 1, y: {m: 2}}</p>
+<p>通用深拷贝方法</p>
+<p>简单版</p>
+<p>let clone = function (v) {<br>
+let o = v.constructor === Array ? [] : {};<br>
+for(var i in v){<br>
+o[i] = typeof v[i] === &quot;object&quot; ? clone(v[i]) : v[i];<br>
+}<br>
+return o;<br>
+}<br>
+// 测试<br>
+let obj = {<br>
+id:'0',<br>
+name:'king',<br>
+sex:'man'<br>
+}<br>
+let obj2 = clone(obj)<br>
+obj2.name = &quot;king2&quot;<br>
+console.log(obj) // {id: &quot;0&quot;, name: &quot;king&quot;, sex: &quot;man&quot;}<br>
+console.log(obj2) // {id: &quot;0&quot;, name: &quot;king2&quot;, sex: &quot;man&quot;}</p>
+<p>let arr3 = [1,2,3,4];<br>
+let arr4 = clone(arr3) // [1,2,3,4]<br>
+arr3[0] = 5;<br>
+console.log(arr3) // [5,2,3,4]<br>
+console.log(arr4) // [1,2,3,4]<br>
+这个深拷贝方法遇到循环引用，会陷入一个循环递归的过程，从而导致爆栈。所以要避免。</p>
 
               </div>
               <div class="toc-container">
-                <ul class="markdownIt-TOC">
-<li>
-<ul>
-<li><a href="#%E7%89%B9%E6%80%A7">特性👇</a></li>
-</ul>
-</li>
-</ul>
-
+                
               </div>
             </div>
           </article>

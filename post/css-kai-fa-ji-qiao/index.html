@@ -2,9 +2,9 @@
   <head>
     <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Vue | VueRouter | Vuex  思维导图 | Gridea</title>
+<title>css开发技巧 | Gridea</title>
 <meta name="description" content="学习" />
-<link rel="shortcut icon" href="https://g2Kennys.github.io/favicon.ico?v=1573544421455">
+<link rel="shortcut icon" href="https://g2Kennys.github.io/favicon.ico?v=1573549030715">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
 <link rel="stylesheet" href="https://g2Kennys.github.io/styles/main.css">
@@ -20,7 +20,7 @@
       <div class="main-content">
         <div class="site-header">
   <a href="https://g2Kennys.github.io">
-  <img class="avatar" src="https://g2Kennys.github.io/images/avatar.png?v=1573544421455" alt="">
+  <img class="avatar" src="https://g2Kennys.github.io/images/avatar.png?v=1573549030715" alt="">
   </a>
   <h1 class="site-title">
     Gridea
@@ -73,25 +73,73 @@
         <div class="post-detail">
           <article class="post">
             <h2 class="post-title">
-              Vue | VueRouter | Vuex  思维导图
+              css开发技巧
             </h2>
             <div class="post-info">
               <span>
                 2019-11-12
               </span>
               <span>
-                1 min read
+                2 min read
               </span>
               
             </div>
             
             <div class="post-content-wrapper">
               <div class="post-content">
-                <p>在github上见到的关于vue的思维导图，帮助理解。<br>
-先是Vue全家桶<br>
-<img src="https://g2Kennys.github.io/post-images/1573542681079.png" alt=""><br>
-细分如下：<br>
-<img src="https://g2Kennys.github.io/post-images/1573542709202.PNG" alt=""></p>
+                <p>Layout Skill<br>
+使用vw定制rem自适应布局<br>
+·要点：移动端使用rem布局需要通过js设置不同屏幕宽高比的font-size，结合vw单位和calc()             可脱离js的控制<br>
+·场景：rem页面布局（不支持低版本移动端系统）<br>
+·兼容：vw、calc()</p>
+<pre><code>html {
+    font-size: calc(100vw / 7.5);
+}
+</code></pre>
+<p>使用:nth-child()选择指定元素<br>
+·要点：通过:nth-child()筛选指定的元素设置样式<br>
+·场景：表格着色、边界元素排版（首元素、尾元素、左右两边元素）<br>
+·兼容：:nth-child()<br>
+·效果：<img src="https://g2Kennys.github.io/post-images/1573547155455.png" alt=""><br>
+使用writing-mode排版竖文<br>
+·要点：通过writing-mode调整文本排版方向<br>
+·场景：竖行文字、诗词<br>
+·兼容：writing-mode<br>
+·效果：<img src="https://g2Kennys.github.io/post-images/1573547493675.png" alt=""><br>
+使用text-align-last对齐两端文本<br>
+·要点：通过text-align-last:justify设置文本两端对齐<br>
+·场景：未知字数中文对齐<br>
+·兼容：text-align-last<br>
+·效果：<img src="https://g2Kennys.github.io/post-images/1573547606428.png" alt=""><br>
+使用object-fit规定图像尺寸<br>
+·要点：通过object-fit使图像脱离background-size的约束，使用<img>来标记图像背景尺寸<br>
+·场景：图片尺寸自适应<br>
+·兼容：object-fit<br>
+·效果：<img src="https://g2Kennys.github.io/post-images/1573547974977.png" alt=""><br>
+使用transform描绘1px边框<br>
+·要点：分辨率比较低的屏幕下显示1px的边框会显得模糊，通过::before或::after和transform            模拟细腻的1px边框<br>
+·场景：容器1px边框<br>
+·兼容：transform<br>
+·效果：<img src="https://g2Kennys.github.io/post-images/1573548253021.png" alt=""><br>
+使用transform翻转内容<br>
+·要点：通过transform:sacle3d()对内容进行翻转(水平、垂直、倒序翻转)<br>
+·场景：内容翻转<br>
+·兼容：transform<br>
+·效果：<img src="https://g2Kennys.github.io/post-images/1573548511656.png" alt=""><br>
+使用letter-spacing排版倒序文本<br>
+·要点：通过letter-spacing设置负值字体间距将文本倒序<br>
+·场景：文言文<br>
+·兼容：letter-spacing<br>
+·效果：<img src="https://g2Kennys.github.io/post-images/1573548632342.png" alt=""><br>
+使用transform启动GPU硬件加速<br>
+·要点：有时执行动画可能会导致页面卡顿，可在特定元素中使用硬件加速来避免这个问题<br>
+·场景：动画元素(绝对定位、同级中超过6个以上使用动画)<br>
+·兼容：transform<br>
+·代码：.ele {<br>
+transform: translate3d(0, 0, 0);  /* translateZ(0)也行 */<br>
+}</p>
+<pre><code>以后一点点补吧。。
+</code></pre>
 
               </div>
               <div class="toc-container">
@@ -104,9 +152,9 @@
         
           <div class="next-post">
             <div class="next">下一篇</div>
-            <a href="https://g2Kennys.github.io/post/xue-xi-shi-hou-de-nao-tu">
+            <a href="https://g2Kennys.github.io/post/hello-gridea">
               <h3 class="post-title">
-                学习时候的脑图。。。
+                栈内存与堆内存 、浅拷贝与深拷贝
               </h3>
             </a>
           </div>

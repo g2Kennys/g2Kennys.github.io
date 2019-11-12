@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://g2Kennys.github.io</id>
     <title>Gridea</title>
-    <updated>2019-11-12T02:50:40.290Z</updated>
+    <updated>2019-11-12T06:19:54.081Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://g2Kennys.github.io"/>
     <link rel="self" href="https://g2Kennys.github.io/atom.xml"/>
@@ -10,6 +10,60 @@
     <logo>https://g2Kennys.github.io/images/avatar.png</logo>
     <icon>https://g2Kennys.github.io/favicon.ico</icon>
     <rights>All rights reserved 2019, Gridea</rights>
+    <entry>
+        <title type="html"><![CDATA[浏览器运行原理]]></title>
+        <id>https://g2Kennys.github.io/post/liu-lan-qi-yun-xing-yuan-li</id>
+        <link href="https://g2Kennys.github.io/post/liu-lan-qi-yun-xing-yuan-li">
+        </link>
+        <updated>2019-11-12T06:17:05.000Z</updated>
+        <content type="html"><![CDATA[<p>浏览器运行原理<br>
+1）浏览器按照引擎分类<br>
+trident     ie<br>
+webkit      chrome   safari<br>
+gecko       firefox<br>
+2）浏览器主要组件<br>
+1. 用户界面     除了浏览器主窗口显示的请求的页面之外的显示的各个部分<br>
+2. 浏览器引擎     在用户界面和呈现引擎之间传送指令<br>
+3.渲染引擎     负责显示请求的内容。如果请求的内容是html，就负责解析html和css，并将解析后的内容显示在屏幕上<br>
+4.网络     用于网络调用，如http请求<br>
+5.用户界面后端     用于绘制基本的窗口小部件。比如组合框和窗口<br>
+6.JavaScript解释器     用于解析和执行JavaScript代码<br>
+7.数据存储     持久层。浏览器需要在硬盘上保存各种数据，例如cookie<br>
+3）浏览器内核工作原理<br>
+1.渲染引擎<br>
+渲染引擎解析HTML文档，并将文档中的标签转化为dom节点树(内容树)，同时解析外部css文件和style标签中的样式数据。<br>
+样式信息与HTML中的可见内容一起被构建为“渲染树（render）”。渲染树构建完毕后进入布局处理阶段，即为每一个节点分配一个屏幕坐标。下一步绘制，即遍历render树，并使用ui后端层绘制每个节点。<br>
+1.1HTML解析，css解析<br>
+2.js引擎<br>
+js引擎就是一个专门处理js脚本的虚拟机，专门设计来解释和执行JavaScript代码。js引擎会加载你的源代码，把他解析成字符串，把这些字符串转换成编译器可以理解的字节码，然后执行这些字节码。<br>
+4）前端处理流程<br>
+1.输入url<br>
+2.查看浏览器是否有缓存，如果有，继续查看缓存是否过期，如果没有过期，直接返回缓存页面，如果没有缓存或者缓存过期，发送一个请求。<br>
+3.浏览器解析url地址，获取协议、主机名、端口号和路径。<br>
+4.获取主机ip过程<br>
+(1)  浏览器缓存<br>
+(2)  主机缓存<br>
+(3)  hosts文件<br>
+(4)  路由器缓存<br>
+(5)  DNS缓存<br>
+(6)  DNS递归查询<br>
+5.浏览器发起和服务器的TCP连接，执行三次握手<br>
+6.三次握手连接后，浏览器发送一个http请求<br>
+请求头： 请求头部由关键字/值对组成，每行一对，关键字和值用英文冒号“:”分隔。请求头部通知服务器有关于客户端请<br>
+求的信息，典型的请求头有：<br>
+User-Agent：产生请求的浏览器类型。<br>
+Accept：客户端可识别的内容类型列表。<br>
+Host：请求的主机名，允许多个域名同处一个IP地址，即虚拟主机。<br>
+7.服务器收到请求，转到相关的服务程序，期间可能需要连接并操作数据库（get、post）<br>
+8.服务器是否需要缓存，，服务器处理完请求，发出一个响应<br>
+9.服务器根据请求头包含信息决定是否需要关闭tcp连接（关闭为四次挥手）<br>
+10.浏览器对接收到的响应进行解码<br>
+11.浏览器解析收到的响应并根据响应的内容进行构建dom树，构建render树，渲染render树等过程<br>
+12.处理嵌入的其他资源如css文件、js文件、图片文件、音视频等文件</p>
+<p>将css放头部，js放底部可以提高页面性能<br>
+原因：js阻塞dom解析和渲染</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[hello world]]></title>
         <id>https://g2Kennys.github.io/post/hello-world</id>
@@ -103,7 +157,10 @@ console.log(arr2) //[6, 2, 3, 4, 7]</p>
 let b = JSON.parse(JSON.stringify(a));<br>
 b.x = 5;<br>
 console.log(a.x); // 10<br>
-console.log(b.x); // 5</p>
+console.log(b.x); // 5<br>
+<img src="https://g2Kennys.github.io/post-images/1573527330051.png" alt=""><br>
+<img src="https://g2Kennys.github.io/post-images/1573527335157.png" alt=""><br>
+<img src="https://g2Kennys.github.io/post-images/1573527340145.png" alt=""></p>
 <p>数组<br>
 一、for 循环</p>
 <p>//for 循环 copy<br>

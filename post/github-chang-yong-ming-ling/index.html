@@ -1,0 +1,280 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>GitHub常用命令 | Gridea</title>
+<meta name="description" content="学习" />
+<link rel="shortcut icon" href="https://g2Kennys.github.io/favicon.ico?v=1573557154285">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+<link rel="stylesheet" href="https://g2Kennys.github.io/styles/main.css">
+
+<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
+
+
+
+  </head>
+  <body>
+    <div class="main">
+      <div class="main-content">
+        <div class="site-header">
+  <a href="https://g2Kennys.github.io">
+  <img class="avatar" src="https://g2Kennys.github.io/images/avatar.png?v=1573557154285" alt="">
+  </a>
+  <h1 class="site-title">
+    Gridea
+  </h1>
+  <p class="site-description">
+    学习
+  </p>
+  <div class="menu-container">
+    
+      
+        <a href="/" class="menu">
+          首页
+        </a>
+      
+    
+      
+        <a href="/archives" class="menu">
+          归档
+        </a>
+      
+    
+      
+        <a href="/tags" class="menu">
+          标签
+        </a>
+      
+    
+      
+        <a href="/post/about" class="menu">
+          关于
+        </a>
+      
+    
+  </div>
+  <div class="social-container">
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  </div>
+</div>
+
+        <div class="post-detail">
+          <article class="post">
+            <h2 class="post-title">
+              GitHub常用命令
+            </h2>
+            <div class="post-info">
+              <span>
+                2019-11-12
+              </span>
+              <span>
+                5 min read
+              </span>
+              
+            </div>
+            
+            <div class="post-content-wrapper">
+              <div class="post-content">
+                <p>1.配置git<br>
+Git用户名<br>
+git config --global user.name &quot;Your Name&quot;<br>
+邮箱<br>
+git config --global user.email &quot;email@example.com&quot;<br>
+Git显示颜色<br>
+git config --global color.ui true<br>
+2.初始化<br>
+git init<br>
+3.添加文件并提交代码(git commit之前需要git add,commit只负责提交暂存区的内容)<br>
+git add README.md(文件名)<br>
+git commit -m &quot;备注&quot;<br>
+4.查看当前仓库的状态<br>
+git status<br>
+5.对比文件改动内容<br>
+git diff README.md(文件名)<br>
+6.查看Git日志<br>
+git log<br>
+7.版本回退到第N个版本<br>
+git reset --hard HEAD~N<br>
+8.版本回退到指定版本(git log或者git reflog查看)<br>
+git reset --hard 版本号(5-6位)<br>
+9.撤销修改(最近的一次git add或git commit之前的状态)<br>
+git chevkout --README.md(文件名)<br>
+10.撤销暂存区的修改(git commit之前)<br>
+git reset HEAD README.md(文件名)<br>
+11.删除文件(确定删除需要git commit，若误删可以使用git checkout -- 文件名)<br>
+git rm README.md(文件名)<br>
+12.查看远程仓库连接信息(fetch抓取,push推送)<br>
+git remote -v<br>
+13.关联远程仓库<br>
+git remote add origin git@github.com:username/xxx.git<br>
+14.推送到远程库(第一次推送master分支)<br>
+git push -u origin master<br>
+15.推送到远程库<br>
+git push origin 分支名<br>
+16.克隆代码<br>
+git clone https://github.com/username/xxx.git<br>
+或者<br>
+git clone git@github.com:username/xxxx.git<br>
+17.克隆指定分支代码<br>
+git clone -b 分支名 https://github.com/username/xxx.git<br>
+18.创建分支<br>
+git branch 分支名<br>
+19.切换分支<br>
+老版本<br>
+git checkout 分支名<br>
+新版本<br>
+git switch 分支名<br>
+20.创建分支并切换<br>
+老版本<br>
+git checkout -b 分支名<br>
+新版本<br>
+git switch -c 分支名<br>
+21.查看分支<br>
+git branch<br>
+22.查看所有分支(本地+远程，远程分支会以红色标出，当前分支前面会标一个*号)<br>
+git branch -a<br>
+23.合并某分支到当前分支，若存在冲突会提示手动修改后再提交，git merge默认为fast forward模式<br>
+fast forward模式<br>
+git merge 其他分支名<br>
+禁用Fast forward模式(--no-ff) 推荐<br>
+git merge --no-ff -m &quot;提交备注&quot; 其他分支名<br>
+用git log --graph --pretty=oneline --abbrev-commit命令可以看到分支合并图<br>
+24.删除分支<br>
+git branch -d 分支名<br>
+强行删除分支<br>
+git branch -D 分支名<br>
+25.保存工作空间<br>
+git stash<br>
+26.查看保存的工作空间<br>
+git stash list<br>
+27.从保存的工作空间恢复<br>
+git stash apply<br>
+若存在多个保存的工作空间(n为序号0开始)<br>
+git stash apply stash@{n}<br>
+28.删除保存的工作空间<br>
+git stash drop<br>
+若存在多个保存的工作空间(n为序号0开始)<br>
+git stash drop stash@{n}<br>
+29.从保存的工作空间恢复并删除保存的空间<br>
+git stash pop<br>
+若存在多个保存的工作空间(n为序号0开始)<br>
+git stash pop stash@{n}<br>
+30.将其他分支上的提交应用到当前分支<br>
+git cherry-pick commit的编号<br>
+31.抓取代码<br>
+git pull<br>
+32.将本地分支与远程分支关联<br>
+git branch --set-upstream-to 分支名 origin/分支名<br>
+33.把本地未push的分叉提交历史整理成直线；<br>
+git rebase<br>
+rebase的目的是使得我们在查看历史提交的变化时更容易，因为分叉的提交需要三方对比。<br>
+34.打标签<br>
+git tag v1.0 commit的id(不加则为之后的commit添加标签)<br>
+git tag -a v1.0 -m &quot;提交备注&quot; commit的id(不加则为之后的commit添加标签)<br>
+35.查看所有标签<br>
+git tag<br>
+36.查看标签信息<br>
+git show v1.0<br>
+37.删除本地标签<br>
+git tag -d v0.1<br>
+38.删除远程标签<br>
+git push origin :refs/tags/v1.0<br>
+39.推送某个标签到远程<br>
+git push origin v1.0<br>
+40.推送全部尚未推送的标签<br>
+git push origin --tags<br>
+41.同一套代码关联多个远程库(同时关联github和gitee为例)<br>
+关联GitHub的远程库<br>
+git remote add github git@github.com:username/xxxx.git<br>
+关联Gitee的远程库<br>
+git remote add gitee git@gitee.com:username/xxxx.git<br>
+推送Github<br>
+git push github master<br>
+推送Gitee<br>
+git push gitee master<br>
+42.查看.gitignore文件中哪条规则写错了<br>
+git check-ignore -v 文件名</p>
+
+              </div>
+              <div class="toc-container">
+                
+              </div>
+            </div>
+          </article>
+        </div>
+
+        
+          <div class="next-post">
+            <div class="next">下一篇</div>
+            <a href="https://g2Kennys.github.io/post/css-kai-fa-ji-qiao">
+              <h3 class="post-title">
+                css开发技巧
+              </h3>
+            </a>
+          </div>
+        
+
+        
+
+        <div class="site-footer">
+  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | 
+  <a class="rss" href="https://g2Kennys.github.io/atom.xml" target="_blank">RSS</a>
+</div>
+
+<script>
+  hljs.initHighlightingOnLoad()
+
+  let mainNavLinks = document.querySelectorAll(".markdownIt-TOC a");
+
+  // This should probably be throttled.
+  // Especially because it triggers during smooth scrolling.
+  // https://lodash.com/docs/4.17.10#throttle
+  // You could do like...
+  // window.addEventListener("scroll", () => {
+  //    _.throttle(doThatStuff, 100);
+  // });
+  // Only not doing it here to keep this Pen dependency-free.
+
+  window.addEventListener("scroll", event => {
+    let fromTop = window.scrollY;
+
+    mainNavLinks.forEach((link, index) => {
+      let section = document.getElementById(decodeURI(link.hash).substring(1));
+      let nextSection = null
+      if (mainNavLinks[index + 1]) {
+        nextSection = document.getElementById(decodeURI(mainNavLinks[index + 1].hash).substring(1));
+      }
+      if (section.offsetTop <= fromTop) {
+        if (nextSection) {
+          if (nextSection.offsetTop > fromTop) {
+            link.classList.add("current");
+          } else {
+            link.classList.remove("current");    
+          }
+        } else {
+          link.classList.add("current");
+        }
+      } else {
+        link.classList.remove("current");
+      }
+    });
+  });
+
+</script>
+
+      </div>
+    </div>
+  </body>
+</html>
